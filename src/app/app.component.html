@@ -26,7 +26,12 @@
       </div>
     </div>
     <div class="taskTableBody">
+      <ng-template [ngIf]="tasks.length>0">
         <app-task  *ngFor="let task of tasks|taskFilter:searchStr " [taskItem]="task"></app-task>
+      </ng-template>
+      <ng-template [ngIf]="tasks.length===0">
+        <p class="not_task">Нет данных</p>
+      </ng-template>
     </div>
   </div>
 </div>

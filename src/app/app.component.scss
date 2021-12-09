@@ -95,6 +95,12 @@ $item-table-height: 55px;
       }
     }
     .taskTableBody{
+      .not_task{
+        margin-top: 200px;
+        text-align: center;
+        font-size: 24px;
+        color: $inactive-text-color;
+      }
        .taskTableBodyItem{
          display: flex;
        }
