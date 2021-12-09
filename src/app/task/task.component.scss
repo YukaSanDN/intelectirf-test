@@ -1,0 +1,122 @@
+@import "variables";
+$item-table-height: 55px;
+.taskTable{
+  .taskTableHeader{
+    background: $main-color;
+    p{
+      color: $hover-color;
+      font-size: 18px;
+    }
+    .taskTableHeaderLeft{
+      width: 60%;
+      min-width: 350px;
+      display: inline-block;
+      div{
+        display: inline-block;
+        &:first-child{
+          width: 50%;
+        }
+        p{
+          padding-left: 20px;
+        }
+      }
+
+    }
+    .taskTableHeaderRight{
+      width: 40%;
+      min-width: 500px;
+      display: inline-block;
+    }
+  }
+  .taskTableBody{
+    .taskTableBodyItem{
+      display: flex;
+    }
+    .partItem{
+      display: inline-block;
+      height: $item-table-height;
+      width: calc(100% - 12px);
+      border: solid 1px $row-border-color;
+      /* div{
+         display: inline-block;
+         height: $item-table-height;
+       }*/
+    }
+    .taskTableBodyLeft{
+      width: calc(60% - 2px);
+      height: $item-table-height;
+      display: flex;
+      div {
+        &:first-child {
+          width: 50%;
+        }
+        &:last-child {
+          border-left: solid 1px $row-border-color;
+        }
+      }
+      input{
+        margin-left: 20px;
+        height: 30px;
+        margin-top: 10px;
+        font-size: 18px;
+
+        &:read-only{
+          background: none;
+          border: none;
+
+        }
+      }
+    }
+    .taskTableBodyRight{
+      width: calc(40% - 2px);
+      display: flex;
+      div{
+        &:first-child{
+          width: 80%;
+          border-right: solid 1px $row-border-color;
+          label>input[name="Сompleted[]"]{
+            margin-top: 20px;
+          }
+          label>input[name="Сompleted[]"]:before {
+            content: '';
+            display: inline-block;
+            border: solid 1px gray;
+            border-radius: 3px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            vertical-align: middle;
+            margin-right: 7px;
+            top: -5px;
+            position: relative;
+          }
+          label>input[name="Сompleted[]"]:checked:before {
+            content: '\2714';
+            font-size: 14px;
+            color:$secondary-text-color;
+            background: $main-color;
+            border: solid 1px #008390;
+            text-align: center;
+          }
+        }
+        &:last-child{
+          width: calc(20% - 2px);
+          height: $item-table-height;
+          .buttonWrapper{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            button{
+              border: none;
+              background: none;
+              cursor: pointer;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}

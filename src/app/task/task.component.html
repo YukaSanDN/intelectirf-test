@@ -1,0 +1,35 @@
+<div  class="taskTableBodyItem">
+  <div class="taskTableBodyLeft partItem">
+    <div class="partItemBlock">
+      <input  class="partItemTitle" type="text"  [readonly]="!isUpdate" [value]="inputValue" (input)="inputChange($event)">
+    </div>
+    <!--<div >
+      <input class="partItemDate" type="text" value="23.01.2021" readonly>
+    </div>-->
+  </div>
+  <div class="taskTableBodyRight partItem">
+    <div class="partItemIsDoneWrapper">
+      <label>
+        <input class="partItemIsDone" name="Сompleted[]" type="checkbox" [checked]='isCompleted' (change)="updateTaskCompleted($event)">
+      </label>
+    </div>
+    <div class="partItemButtonWrapper">
+      <div class="buttonWrapper">
+        <button *ngIf="!isUpdate" (click)="updateClickTask()">
+          <img src="/assets/svg/edit.svg">
+        </button>
+        <button *ngIf="!isUpdate">
+          <img src="/assets/svg/remove.svg" (click)="removeTask($event)">
+        </button >
+        <button *ngIf="isUpdate">
+          <img src="/assets/svg/ok.svg" (click)="updateTaskTitle()">
+        </button>
+        <button *ngIf="isUpdate" (click)="noUpdateClickTask()">
+          <img src="/assets/svg/cancel.svg">
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

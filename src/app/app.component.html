@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="searchAndAdd">
+    <div class="searchWrapperBlock">
+        <label>Фильтр:</label>
+        <input id="searchInput" class="searchAndAddInput" type="text" placeholder="Поиск по задачи" (input)="filterTask($event)" >
+    </div>
+    <div class="addWrapperBlock">
+        <div class="addContainer">
+          <input id="addInput" class="searchAndAddInput" type="text" placeholder="Введите название задачи" (input)="newTaskTitleF($event)">
+          <button id="addButton" (click)="addNewTask()">Добавить задачу</button>
+        </div>
+    </div>
+  </div>
+  <div class="taskTable">
+    <div class="taskTableHeader">
+      <div class="taskTableHeaderLeft">
+        <div>
+          <p>Задачи</p>
+        </div>
+      <!-- <div>
+         <p>Дата</p>
+       </div>-->
+      </div>
+      <div class="taskTableHeaderRight">
+        <p>Выполнено</p>
+      </div>
+    </div>
+    <div class="taskTableBody">
+        <app-task  *ngFor="let task of tasks|taskFilter:searchStr " [taskItem]="task"></app-task>
+    </div>
+  </div>
+</div>
+<app-modal></app-modal>

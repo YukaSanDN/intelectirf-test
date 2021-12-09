@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "task": "Выучить Angular",
+      "isCompleted": false,
+      "id": 1
+    },
+    {
+      "task": "Почитать Habr",
+      "isCompleted": true,
+      "id": 5
+    },
+    {
+      "task": "Погладить кота",
+      "isCompleted": true,
+      "id": 8
+    },
+    {
+      "task": "Поспать",
+      "isCompleted": false,
+      "id": 9
+    },
+    {
+      "task": "Новое задание",
+      "isCompleted": false,
+      "id": 10
+    }
+  ]
+}

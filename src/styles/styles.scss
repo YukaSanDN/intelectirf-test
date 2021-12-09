@@ -1,0 +1,10 @@
+/* Подключаем шрифты */
+@import "fonts";
+@import "variables";
+
+
+body{
+  font-family: Manrope, serif;
+  margin: 0px;
+  background: $background-color;
+}
