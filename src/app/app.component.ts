@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Task} from '@interfaces/task.interface';
 import {AppComponentService} from './app.component.service';
 import {Observable} from 'rxjs';
-import {takeUntil} from "rxjs/operators";
-import {IModalData, ModalService} from "./modal/modal.service";
-import {Unsubscribe} from "./util/unsubscribe";
+import {takeUntil} from 'rxjs/operators';
+import {IModalData, ModalService} from './modal/modal.service';
+import {Unsubscribe} from './util/unsubscribe';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import {Unsubscribe} from "./util/unsubscribe";
 })
 export class AppComponent extends Unsubscribe implements OnInit{
   newTitleTask: HTMLInputElement;
-  tasks: Task[];
+  tasks: Task[] = [];
   searchStr: string;
   tasks$: Observable<Task[] | null> = this.ComponentService.getTasks();
   constructor(
@@ -39,7 +39,7 @@ export class AppComponent extends Unsubscribe implements OnInit{
             this.ComponentService.deleteTask(dTask[0])
               .subscribe((task) => {
                   const indexR = this.tasks.indexOf(dTask[0]);
-                  if ( indexR ){
+                  if ( indexR !== null){
                     this.tasks.splice(indexR, 1);
                   }
                   this.modalService.close();
